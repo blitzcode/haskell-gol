@@ -1,6 +1,9 @@
 
 # A Haskell 'Game of Life' implementation using Data.Array and GLUT
 
+__UPDATE: See [here][newgol] for a rewrite of this program using Data.Vector / GLFW-b__
+[newgol]:https://github.com/blitzcode/haskell-gol-vector-glfwb
+
 ![gol](https://raw.github.com/blitzcode/haskell-gol-array-glut/master//screenshot.png)
 
 This repository contains the source code for a simple Game of Life implementation in Haskell using Data.Array for the simulation grid / frame buffer and GLUT for drawing and input handling.
