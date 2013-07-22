@@ -36,7 +36,7 @@ main = do
 
 sizeFromGrid :: Grid -> Size
 sizeFromGrid g = case bounds g of
-    ((x0, y0), (x1, y1)) -> Size (fromIntegral $ x1 - x0 + 1) (fromIntegral $ y1 - y0 + 1)
+    ((y0, x0), (y1, x1)) -> Size (fromIntegral $ x1 - x0 + 1) (fromIntegral $ y1 - y0 + 1)
 growSize :: Int -> Int -> Size -> Size
 growSize x y (Size w h) = Size (w + fromIntegral x) (h + fromIntegral y)
 
@@ -45,16 +45,16 @@ makeRandomGridIO w h = do
     gen <- newStdGen
     return $ makeRandomGrid w h gen
 makeRandomGrid :: RandomGen g => Int -> Int -> g -> Grid
-makeRandomGrid w h g = listArray ((0, 0), (w - 1, h - 1)) rndList
+makeRandomGrid w h g = listArray ((0, 0), (h - 1, w - 1)) rndList
     where rndList = map ((<) 0.75) $ (randoms g :: [Float])
 
 -- TODO: Only works with unboxed arrays (undefined outside of ASCII area)
 gridFromASCII :: Int -> Int -> Int -> Int -> [String] -> Grid
-gridFromASCII w h xoffs yoffs str = arr . zip idx . asc $ str
-    where idx = [(x + xoffs, y + yoffs) | y <- [0..(length str) - 1], x <- [0..(length . head $ str) - 1]]
+gridFromASCII w h xoffs yoffs str = arr . zip idx . asc $ reverse str
+    where idx = [(y + yoffs, x + xoffs) | y <- [0..(length str) - 1], x <- [0..(length . head $ str) - 1]]
           asc = concatMap (map fromASCII)
               where fromASCII x = case x of { 'O' -> True; _ -> False }
-          arr = array ((0, 0), (w - 1, h - 1))
+          arr = array ((0, 0), (h - 1, w - 1))
 centerFromASCIIHelper :: [String] -> Grid
 centerFromASCIIHelper = gridFromASCII gridWidth gridHeight (gridWidth `quot` 2) (gridHeight `quot` 2)
 
