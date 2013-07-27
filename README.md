@@ -63,10 +63,12 @@ Profile run:
   
     Productivity  92.6% of total user, 100.8% of total elapsed
 
-Parallelizing the grid simulation and trying the LLVM backend seem like good
-next steps. The [Repa][repa] (REgular PArallel arrays) and [Accelerate][accelerate] (Embedded language for high-performance array computations, CUDA backend available) packages are probably worth a look as well.
+We're up to a respectable 400 gen/sec for a 256^2 grid from previously 30 gen/sec.
+
+Parallelizing the grid simulation and trying the LLVM backend seem like good next steps. The [Repa][repa] (REgular PArallel arrays), [Accelerate][accelerate] (embedded language for high-performance array computations, CUDA backend available) and [Nikolai][nikolai] (first-order language of array computations embedded in Haskell that compiles to GPUs via CUDA) packages are probably worth a look as well.
 [repa]:http://repa.ouroborus.net/
 [accelerate]:https://github.com/AccelerateHS/accelerate
+[nikolai]:https://github.com/mainland/nikola
 
 # Building
 

@@ -221,13 +221,13 @@ stepGrid !w !h !g = VU.create $ do -- ST monad (need locally mutable vectors)
          where idx = x + y * w
                cell = g `VU.unsafeIndex` idx
                nb = foldr (\i a -> a + if (g `VU.unsafeIndex` i) then 1 else 0) 0 nbList :: Int
-               nbList | not check = [ idx + 1    , idx - 1
+               nbList | not check = [ idx + 1    , idx - 1           -- 1D faster in the interior
                                     , idx + w    , idx - w
                                     , idx + 1 + w, idx + 1 - w
                                     , idx - 1 + w, idx - 1 - w
                                     ]
                       | otherwise = map (\(x', y') -> (x' `mod` w) + (y' `mod` h) * w)
-                                    [ (x + 1, y    ), (x    , y + 1)
+                                    [ (x + 1, y    ), (x    , y + 1) -- 2D faster for torus boundaries
                                     , (x - 1, y    ), (x    , y - 1)
                                     , (x + 1, y + 1), (x - 1, y - 1)
                                     , (x + 1, y - 1), (x - 1, y + 1)
