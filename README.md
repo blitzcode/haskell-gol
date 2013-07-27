@@ -3,6 +3,9 @@
 
 ![gol](https://raw.github.com/blitzcode/haskell-gol-vector-glfwb/master//screenshot.png)
 
+__UPDATE: See [here][newgol] for a parallelized version of this program__
+[newgol]:https://github.com/blitzcode/haskell-gol-parallel-glfwb
+
 This repository contains the source code for a rewrite of my [earlier Game of Life implementation][oldgol] in Haskell.
 [oldgol]:https://github.com/blitzcode/haskell-gol-array-glut
 
@@ -63,12 +66,7 @@ Profile run:
   
     Productivity  92.6% of total user, 100.8% of total elapsed
 
-We're up to a respectable 400 gen/sec for a 256^2 grid from previously 30 gen/sec.
-
-Parallelizing the grid simulation and trying the LLVM backend seem like good next steps. The [Repa][repa] (REgular PArallel arrays), [Accelerate][accelerate] (embedded language for high-performance array computations, CUDA backend available) and [Nikola][nikola] (first-order language of array computations embedded in Haskell that compiles to GPUs via CUDA) packages are probably worth a look as well.
-[repa]:http://repa.ouroborus.net/
-[accelerate]:https://github.com/AccelerateHS/accelerate
-[nikola]:https://github.com/mainland/nikola
+We're up to 400 gen/sec for a 256^2 grid from previously 30 gen/sec.
 
 # Building
 
