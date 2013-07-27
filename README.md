@@ -1,10 +1,10 @@
 
 # A Haskell 'Game of Life' implementation using Data.Vector and GLFW-b
 
-![gol](https://raw.github.com/blitzcode/haskell-gol-vector-glfwb/master//screenshot.png)
-
 __UPDATE: See [here][newgol] for a parallelized version of this program__
 [newgol]:https://github.com/blitzcode/haskell-gol-parallel-glfwb
+
+![gol](https://raw.github.com/blitzcode/haskell-gol-vector-glfwb/master//screenshot.png)
 
 This repository contains the source code for a rewrite of my [earlier Game of Life implementation][oldgol] in Haskell.
 [oldgol]:https://github.com/blitzcode/haskell-gol-array-glut
