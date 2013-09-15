@@ -1,10 +1,10 @@
 
 # A parallel Haskell 'Game of Life' implementation
 
-![gol](https://raw.github.com/blitzcode/haskell-gol-parallel-glfwb/master/screenshot.png)
+![gol](https://raw.github.com/blitzcode/haskell-gol/master/parallel-glfwb/screenshot.png)
 
 This repository contains the source code for a parallel version of my [earlier Game of Life implementation][oldgol] in Haskell.
-[oldgol]:https://github.com/blitzcode/haskell-gol-vector-glfwb
+[oldgol]:https://github.com/blitzcode/haskell-gol/tree/master/vector-glfwb
 
 The purpose of this project was to try different approaches to parallelism in Haskell and see how they work out for this type of program. I've also made a number of other improvements over the predecessor. A GPU version using [Accelerate][accelerate] or [Nikola][nikola] seems like an interesting idea, but I haven't done any work on it so far.
 [accelerate]:http://hackage.haskell.org/package/accelerate

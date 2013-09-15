@@ -2,12 +2,12 @@
 # A Haskell 'Game of Life' implementation using Data.Vector and GLFW-b
 
 __UPDATE: See [here][newgol] for a parallelized version of this program__
-[newgol]:https://github.com/blitzcode/haskell-gol-parallel-glfwb
+[newgol]:https://github.com/blitzcode/haskell-gol/tree/master/parallel-glfwb
 
-![gol](https://raw.github.com/blitzcode/haskell-gol-vector-glfwb/master//screenshot.png)
+![gol](https://raw.github.com/blitzcode/haskell-gol/master/vector-glfwb/screenshot.png)
 
 This repository contains the source code for a rewrite of my [earlier Game of Life implementation][oldgol] in Haskell.
-[oldgol]:https://github.com/blitzcode/haskell-gol-array-glut
+[oldgol]:https://github.com/blitzcode/haskell-gol/tree/master/array-glut
 
 The purpose of this project was to improve on my first version and learn more about using arrays, OpenGL, concurrency, parallelism, strictness and game / simulation program structure in Haskell. 
 
