@@ -11,7 +11,7 @@ Second version using Data.Vector and GLFW-b
 
 ![gol](https://raw.github.com/blitzcode/haskell-gol/master/vector-glfwb/screenshot.png)
 
-Third parallelized version (Async, Repa, C++ reference)
+Third parallelized version (Async, Repa, LLVM backend, C++ & pthread reference)
 
 ![gol](https://raw.github.com/blitzcode/haskell-gol/master/parallel-glfwb/screenshot.png)
 
